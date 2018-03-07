@@ -105,3 +105,9 @@ unsigned int HLL::distinct_count() {
   return (unsigned int)dv;
 }
 
+void HLL::reset() {
+  int m = pow(2, _register_bits);
+  for(int i = 0; i < m; ++i) {
+    _registers[i] = 0;
+  }
+}
